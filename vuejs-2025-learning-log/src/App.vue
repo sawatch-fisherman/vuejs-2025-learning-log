@@ -1,5 +1,6 @@
 <script setup>
 const userName = 'suzuki taro'
+console.log(userName)
 </script>
 <template>
   <h1>Title</h1>
