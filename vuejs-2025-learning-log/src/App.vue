@@ -7,8 +7,7 @@ function increment() {
   instructor.age
   instructor.bio = 'hi'
   instructor.sns.twitter = '@hellow'
-
-
+  instructor.email = ref('info@sawa.com')
   console.log(price)
 }
 const info = ref({
@@ -23,8 +22,13 @@ const instructor = reactive({
     youtube: '@sawatch',
     a: {}
   },
+  email: ref('sawaa@example.com')
 })
 instructor.bio = 'hello'
+const items = reactive([ref(1), ref(2), ref(3)])
+items.reverse()
+console.log(items[0].value)
+console.log(instructor.email)
 console.log(info.value)
 console.log(instructor.sns)
 </script>
