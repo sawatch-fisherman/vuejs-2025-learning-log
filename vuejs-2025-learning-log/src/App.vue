@@ -31,6 +31,13 @@ console.log(items[0].value)
 console.log(instructor.email)
 console.log(info.value)
 console.log(instructor.sns)
+
+const courseInfo = {
+  sections: ref(10),
+  language: ref('Japanese')
+}
+
+
 </script>
 <template>
   <h1>Title: {{ title }}</h1>
@@ -39,5 +46,5 @@ console.log(instructor.sns)
   <h2>Students: {{ info.students }}</h2>
   <h2>Instructor age: {{ instructor.age }}</h2>
   <h2>Instructor bio: {{ instructor.bio }}</h2>
-  <h2>Instructor SNS Twitter: {{ instructor.bio }}</h2>
+  <h2>Course Info sections: {{ courseInfo.sections }}</h2>
 </template>
