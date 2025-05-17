@@ -1,11 +1,7 @@
 <script setup>
 import { ref } from 'vue'
-
-const count = ref(2);
-const count2 = ref(4);
+const message = ref('<h1>Passowrd</h1><input>')      // ←のようなコードはXSSの対象のため記述しない
 </script>
 <template>
-  <div>{{ count + count2 }}</div>
-  <div>{{ count > 3 ? 'YES' : 'NO' }}</div>
-  <div>{{ count }}</div>
+  <div v-html="message"></div>
 </template>
