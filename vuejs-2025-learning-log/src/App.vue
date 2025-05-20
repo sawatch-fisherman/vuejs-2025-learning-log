@@ -1,9 +1,12 @@
 <script setup>
 import { ref } from 'vue'
-const vueURL = ref('https://vuejs.org/images/logo.png')
-const vueId = ref('vue-link')
+const count = ref(0)
+function countUp() {
+  count.value++
+}
 </script>
 <template>
-  <a v-bind="{ id: vueId, href: vueURL }">Vue.js</a>
-  <button :disabled="''">button</button>
+  <p>{{ count }}</p>
+  <button v-on:click="count++">button1</button>
+  <button @click="countUp">button2</button>
 </template>
