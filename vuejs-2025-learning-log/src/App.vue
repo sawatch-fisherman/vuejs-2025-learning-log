@@ -1,12 +1,19 @@
 <script setup>
 import { ref } from 'vue'
 const count = ref(0)
-function countUp(event, times) {
-  count.value = event.clientX * times
-}
 </script>
 <template>
   <p>{{ count }}</p>
-  <button v-on:click="count = $event.clientY">button1</button>
-  <button @click="countUp($event, 5)">button2</button>
+  <div @click.stop="count++">
+    <button @click="$event">button1a</button>
+    <button @click="$event.stopPropagation()">button1b not count-up</button>
+    <button @click.stop="">button1c not count-up</button>
+    <a href="https://sawada-system.jp/" @click.prevent="">button1d</a> // イベント修飾子
+  </div>
+
+  <a href="https://sawada-system.jp/" @click="$event.preventDefault()">button2a</a> // ページ遷移しない
+  <a href="https://sawada-system.jp/" @click.prevent="">button2b</a> // イベント修飾子
+
+
+
 </template>
