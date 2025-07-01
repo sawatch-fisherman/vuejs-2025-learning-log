@@ -1,27 +1,9 @@
 <script setup>
 import { ref } from 'vue'
-const isRed = ref(true)
-const isBgBlue = ref(false)
-const toggleClass = () => {
-  isRed.value = !isRed.value
-  isBgBlue.value = !isBgBlue.value
-}
+
 </script>
 <template>
-  <!-- 動的と静的なクラスの組み合わせ -->
-  <div class="border" :class="{ red: isRed, 'bg-blue': isBgBlue }">Hello</div>
-  <button @click="toggleClass">toggle</button>
+  <!-- background-colorもbackgoroundColorも同じ意味 -->
+  <div :style="{ color: 'red', backgroundColor: 'blue' }">Hello1</div>
+  <div :style="{ color: 'red', 'background-color': 'blue' }">Hello2</div>
 </template>
-<style>
-.red {
-  color: red;
-}
-
-.bg-blue {
-  background-color: blue;
-}
-
-.border {
-  border: 1px solid red;
-}
-</style>
