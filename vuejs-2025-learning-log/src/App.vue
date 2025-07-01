@@ -1,9 +1,13 @@
 <script setup>
 import { ref } from 'vue'
+const ok = ref(true)
+const myabeOk = ref(false)
 
 </script>
 <template>
-  <!-- background-colorもbackgoroundColorも同じ意味 -->
-  <div :style="{ color: 'red', backgroundColor: 'blue' }">Hello1</div>
-  <div :style="{ color: 'red', 'background-color': 'blue' }">Hello2</div>
+  <button @click="ok = !ok">Toggle Ok</button>
+  <button @click="myabeOk = !myabeOk">Toggle Maybe Ok</button>
+  <p v-if="ok">Ok</p>
+  <p v-else-if="myabeOk">Maybe Ok</p>
+  <p v-else>Not Ok</p>
 </template>
