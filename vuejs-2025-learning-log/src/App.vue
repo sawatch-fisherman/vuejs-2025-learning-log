@@ -4,14 +4,15 @@ import { ref } from 'vue'
 // const animals = ref([{ id: 2, name: 'Dog' }, { id: 2, name: 'Dog' }, { id: 3, name: 'Bird' }])
 
 // 正しく動作するパターン
-const animals = ref([{ id: 2, name: 'Dog' }, { id: 2, name: 'Dog' }, { id: 3, name: 'Bird' }])
+const animals = ref([{ id: 1, name: 'Dog' }, { id: 2, name: 'Cat' }, { id: 3, name: 'Bird' }])
 </script>
 <template>
   <button @click="animals.shift()">button</button>
   <!-- v-forを使用する場合は、 :key が必須になる -->
   <!-- :keyが無いと、Elements in iteration expect to have 'v-bind:key' directives.といったエラーが表示される -->
   <!-- https://vuejs.org/guide/essentials/list.html#maintaining-state-with-key -->
-  <li v-for="animal in animals" :key="animal.id"><input type="text" />{{ animal.name }}</li>
+  <li v-for="(animal, index) in animals" :key="animal.id"><input type="text" />{{ animal.name }}({{ index }})
+  </li>
   <!-- ↓NGなパターン -->
   <!-- <li v-for="animal in animals"><input type="text" />{{ animal.name }}</li> -->
 </template>
