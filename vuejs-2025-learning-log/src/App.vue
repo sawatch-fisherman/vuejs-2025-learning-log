@@ -1,7 +1,9 @@
 <script setup>
-import { ref } from 'vue'
+import CountUp from './CountUp.vue'
 </script>
 <template>
-  <!-- 0からではなく1から始まる -->
-  <p v-for="n of 10" :key="n">{{ n }}</p>
+  <h1>App H1</h1>
+  <CountUp />
+  <CountUp />
+  <CountUp>22</CountUp>
 </template>
