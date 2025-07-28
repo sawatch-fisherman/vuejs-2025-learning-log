@@ -6,7 +6,7 @@ import App from './App.vue'
 // グローバル登録のコンポーネント
 // 基本的にはプロジェクトで使用しないほうが良いが、
 // どうしても必要な場合は、グローバル登録のコンポーネントを使用することができる
-import BaseEmoji from './BaseEmoji.vue'
+import BaseEmoji from './components/BaseEmoji.vue'
 
 const app = createApp(App)
 
