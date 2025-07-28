@@ -5,5 +5,8 @@ import CountUp from './CountUp.vue'
   <h1>App H1</h1>
   <CountUp />
   <CountUp />
-  <CountUp>22</CountUp>
+  <br />
+  <br />
+  <!-- グローバル登録のコンポーネントを使用 -->
+  <BaseEmoji />
 </template>
