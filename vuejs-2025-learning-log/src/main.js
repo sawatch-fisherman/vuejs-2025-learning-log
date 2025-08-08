@@ -8,6 +8,9 @@ import App from './App.vue'
 // どうしても必要な場合は、グローバル登録のコンポーネントを使用することができる
 import BaseEmoji from './components/BaseEmoji.vue'
 
+// グローバルスタイルシートのインポート
+import './assets/main.css'
+
 const app = createApp(App)
 
 // グローバル登録のコンポーネントをVueのインスタンスに登録する
