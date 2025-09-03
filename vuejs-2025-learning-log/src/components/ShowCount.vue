@@ -2,7 +2,8 @@
 const isRequired = false
 // defineProps内では、外部（スコープ外）の値(isRequired)を参照できない
 defineProps({
-  foo: {
+  // コンポーネントのpropsの命名規則はキャメルケース
+  totalPrice: {
     // 以下のように[]で囲むと複数の型を指定できる
     type: [Number, String, Boolean, Array, Object, Function, Symbol],
 

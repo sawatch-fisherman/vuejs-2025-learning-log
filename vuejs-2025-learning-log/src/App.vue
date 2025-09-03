@@ -4,6 +4,7 @@ import ShowCount from './components/ShowCount.vue';
 </script>
 <template>
   <div>
-    <ShowCount />
+    <!-- 親コンポーネントのpropsの命名規則はケバブケース -->
+    <ShowCount :total-price="count" />
   </div>
 </template>
