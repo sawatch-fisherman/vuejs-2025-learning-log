@@ -1,10 +1,14 @@
 <script setup>
 import { ref } from 'vue';
-import ShowCount from './components/ShowCount.vue';
+import FormatButton from './components/FormatButton.vue';
+
+const count = ref(0);
 </script>
 <template>
   <div>
-    <!-- 親コンポーネントのpropsの命名規則はケバブケース -->
-    <ShowCount :total-price="count" />
+    <p>カウント: {{ count }}</p>
+    <button @click="count++">カウントアップ</button>
+    <!-- 子コンポーネントからイベントを受け取る -->
+    <FormatButton @format="count = 0" />
   </div>
 </template>
