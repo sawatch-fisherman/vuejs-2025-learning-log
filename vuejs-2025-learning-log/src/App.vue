@@ -16,6 +16,7 @@ function onFormat(value) {
     <!-- $event で値を受け取れる -->
     <!-- <FormatButton @format="count = $event" /> -->
     <!-- 以下のように関数を定義しても良い -->
-    <FormatButton @format="onFormat" />
+    <!-- 子がキャメルケースでイベントを発火しても、親はケバブケースで受け取れる -->
+    <FormatButton @formatCount="onFormat" />
   </div>
 </template>

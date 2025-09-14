@@ -4,9 +4,9 @@
 
 // スクリプトからエミットする場合は、defineEmitsの返り値を受け取る
 // 返り値の型を指定する場合は、以下のようにオブジェクト形式で書く
-const emit = defineEmits(['format']);
+const emit = defineEmits(['formatCount']);
 function emitFormat() {
-  emit('format', 100);
+  emit('formatCount', 100);
 }
 </script>
 <template>
