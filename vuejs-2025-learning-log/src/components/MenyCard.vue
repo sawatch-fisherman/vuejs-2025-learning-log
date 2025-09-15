@@ -1,7 +1,21 @@
+<script setup>
+defineProps({
+  name: {
+    type: String,
+    required: true
+  },
+  emoji: {
+    type: String,
+    required: true
+  }
+}
+)
+</script>
+
 <template>
   <div class="card">
-    <div>カレー</div>
-    <div>🍛</div>
+    <div>{{ name }}</div>
+    <div>{{ emoji }}</div>
   </div>
 </template>
 <style scoped>
