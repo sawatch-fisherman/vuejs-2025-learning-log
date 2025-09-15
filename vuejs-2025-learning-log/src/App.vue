@@ -25,9 +25,12 @@ function selectMeny(index) {
     <h1 class="title">今日は何を食べる？</h1>
     <MenyCard :name="menyus[selectedMenyusIndex].name" :emoji="menyus[selectedMenyusIndex].emoji"
       @click="selectMeny(selectedMenyusIndex)" />
-    <p>VS</p>
-    <MenyCard :name="menyus[recommendMenyusIndex].name" :emoji="menyus[recommendMenyusIndex].emoji"
-      @click="selectMeny(recommendMenyusIndex)" />
+    <template v-if="recommendMenyusIndex < menyus.length">
+      <p>VS</p>
+      <MenyCard :name="menyus[recommendMenyusIndex].name" :emoji="menyus[recommendMenyusIndex].emoji"
+        @click="selectMeny(recommendMenyusIndex)" />
+    </template>
+
   </main>
 </template>
 
