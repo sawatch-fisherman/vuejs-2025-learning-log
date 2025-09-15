@@ -13,13 +13,21 @@ const menyus = ref([
   { name: 'アイスクリーム', emoji: '🍨' },
   { name: 'ドーナツ', emoji: '🍩' },
 ])
+const selectedMenyusIndex = ref(0)
+const recommendMenyusIndex = ref(1)
+function selectMeny(index) {
+  selectedMenyusIndex.value = index
+  recommendMenyusIndex.value++
+}
 </script>
 <template>
   <main>
     <h1 class="title">今日は何を食べる？</h1>
-    <MenyCard :name="menyus[4].name" :emoji="menyus[4].emoji" />
+    <MenyCard :name="menyus[selectedMenyusIndex].name" :emoji="menyus[selectedMenyusIndex].emoji"
+      @click="selectMeny(selectedMenyusIndex)" />
     <p>VS</p>
-    <MenyCard :name="menyus[7].name" :emoji="menyus[7].emoji" />
+    <MenyCard :name="menyus[recommendMenyusIndex].name" :emoji="menyus[recommendMenyusIndex].emoji"
+      @click="selectMeny(recommendMenyusIndex)" />
   </main>
 </template>
 
