@@ -1,5 +1,5 @@
 <script setup>
-import { onBeforeMount, onMounted, onBeforeUpdate, onUpdated, onBeforeUnmount, onUnmounted, ref } from 'vue'
+import { onBeforeMount, onMounted, onBeforeUpdate, onUpdated, onBeforeUnmount, onUnmounted, nextTick, ref } from 'vue'
 const count = ref(0)
 onBeforeMount(() => {
   console.log('CountNumberコンポーネントが(前)マウントされました')
@@ -24,10 +24,24 @@ onBeforeUnmount(() => {
 onUnmounted(() => {
   console.log('CountNumberコンポーネントが(後)アンマウントされました')
 })
+// function countUp() {
+//   count.value++
+//   nextTick(() => {
+//     console.log('nextTick')
+//     debugger
+//   })
+// }
+// 以下の書き方でも、上と同じ結果になる。どっちでもいい。
+async function countUp() {
+  count.value++
+  await nextTick()
+  console.log('nextTick')
+  debugger
+}
 </script>
 <template>
   <div>
     <p>押した回数：{{ count }}</p>
-    <button @click="count++">＋１</button>
+    <button @click="countUp">＋１</button>
   </div>
 </template>
