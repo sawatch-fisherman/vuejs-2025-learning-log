@@ -1,11 +1,15 @@
 <script setup>
-import { ref } from 'vue'
-import CountNumber from './components/CountNumber.vue'
-const isDisplay = ref(true)
+import { onMounted, useTemplateRef } from 'vue'
+
+// 本物のDOM要素を参照するためのrefを作成する
+const userInputRef = useTemplateRef('userInput')
+console.log(userInputRef.value)
+onMounted(() => {
+  // リロードすると、input要素にフォーカスが当たる
+  userInputRef.value.focus()
+})
 </script>
 <template>
-  <div>
-    <button @click="isDisplay = !isDisplay">表示/非表示</button>
-    <CountNumber v-if="isDisplay" />
-  </div>
+  <!-- 本物のDOM要素を参照するためのrefを作成する -->
+  <input type="text" ref="userInput" />
 </template>
