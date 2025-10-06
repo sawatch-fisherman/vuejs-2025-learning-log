@@ -6,10 +6,19 @@ const x = ref('x')
 
 <template>
   <div class="card">
-    <slot>
-      <!-- コンテンツがない場合のデフォルトのコンテンツをフォールバックコンテンツという -->
-      <p>No content</p>
-    </slot>
+    <header>
+      <slot name="header" />
+    </header>
+    <main>
+      <slot name="main" />
+    </main>
+    <!-- デフォルトのコンテンツ -->
+    <!-- 以下の書き方でも同じ意味 -->
+    <!-- </slot name="default" /> -->
+    <slot />
+    <footer>
+      <slot name="footer" />
+    </footer>
   </div>
 </template>
 
