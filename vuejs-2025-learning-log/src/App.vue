@@ -14,9 +14,7 @@ const y = ref('y')
     <!-- refで定義した場合は、エラーにならない。 -->
     <p>{{ y }}</p>
   </DefaultCard>
-  <!-- Slotを使えば値を動的に変えられる。 -->
+  <!-- slotで定義しないとデフォルトのコンテンツが表示される。 -->
   <DefaultCard>
-    <h2>Hello World3</h2>
-    <p>I'm fain!2</p>
   </DefaultCard>
 </template>
