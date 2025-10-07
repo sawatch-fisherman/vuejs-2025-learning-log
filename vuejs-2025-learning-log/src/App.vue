@@ -10,8 +10,11 @@ import DefaultCard from './components/DefaultCard.vue'
     <p>Default Content1</p>
     <!-- <template v-slot:header></template> -->
     <!-- v-slot:headerと#headerは同じ意味。eslintは#の方を推奨。 -->
-    <template #header>
-      <h2>Header Title</h2>
+    <!-- スロットプロップスは、子コンポーネントで定義していると、親コンポーネントで使用できる。 -->
+    <template #header="{ pageCount }">
+      <h2 v-if="pageCount === 1">いぬ</h2>
+      <h2 v-if="pageCount === 2">ねこ</h2>
+      <h2 v-if="pageCount === 3">とら</h2>
     </template>
     <template #main>
       <p>Main Content</p>
